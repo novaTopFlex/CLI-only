@@ -9,11 +9,11 @@ DIALOG=$(dialog --erase-on-exit --stdout --menu "Select Application/Command..." 
 7 "sudo tshark" \
 8 "ps aux" \
 9 "ps -ely" \
-10 "cal" \
-11 "ncal" \
-12 "date" \
-13 "aptitude" \
-14 "w3m")
+c "cal" \
+n "ncal" \
+d "date" \
+a "aptitude" \
+w "w3m")
 if [[ $DIALOG == 1 ]]
 then ls
 elif [[ $DIALOG == 2 ]]
@@ -32,18 +32,18 @@ elif [[ $DIALOG == 8 ]]
 then ps aux
 elif [[ $DIALOG == 9 ]]
 then ps -ely
-elif [[ $DIALOG == 10 ]]
+elif [[ $DIALOG == c ]]
 then cal $(date +%Y)
-elif [[ $DIALOG == 11 ]]
+elif [[ $DIALOG == n ]]
 then ncal $(date +%Y)
-elif [[ $DIALOG == 12 ]]
+elif [[ $DIALOG == d ]]
 then date
-elif [[ $DIALOG == 13 ]]
+elif [[ $DIALOG == a ]]
 then aptitude
-elif [[ $DIALOG == 14 ]]
+elif [[ $DIALOG == w ]]
 then { touch text
-WWWM=$(dialog --editbox text 0 0)
-w3m "$WWW"
+WWWM=$(dialog --stdout --editbox text 0 0)
+w3m "$WWWM"
 }
 else
 echo "Not Available."
