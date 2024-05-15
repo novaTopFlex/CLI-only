@@ -18,6 +18,8 @@ Fh "Memory Usage (Human-Friendly)" \
 a "Package Manager" \
 0 "Web Browser (JavaScript Not Supported)" \
 s "Secure Shell (Remote into another system)" \
+t "Mastodon" \
+i "Internet Relay Chat (IRC)" \
 o "Other command...")
 if [[ $DIALOG == 1 ]]
 then ls
@@ -61,6 +63,10 @@ then { touch text
 SSH=$(dialog --erase-on-exit --stdout --editbox text 7 0)
 ssh "$SSH"
 }
+elif [[ $DIALOG == t ]]
+then toot tui
+elif [[ $DIALOG == i ]]
+then irssi
 elif [[ $DIALOG == o ]]
 then { touch text
 CMD=$(dialog --erase-on-exit --stdout --editbox text 7 0)
