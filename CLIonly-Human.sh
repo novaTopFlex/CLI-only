@@ -60,7 +60,8 @@ WWWM=$(dialog --erase-on-exit --stdout --editbox text 7 0)
 w3m "$WWWM"
 }
 elif [[ $DIALOG == s ]]
-then { touch text
+then { dialog --no-ok --pause "Enter the device to connect to in the following text box:" 0 0 3
+touch text
 SSH=$(dialog --erase-on-exit --stdout --editbox text 7 0)
 ssh "$SSH"
 }
