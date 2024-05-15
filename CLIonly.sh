@@ -54,8 +54,7 @@ then free -h
 elif [[ $DIALOG == a ]]
 then aptitude
 elif [[ $DIALOG == 0 ]]
-then { dialog --no-ok --pause "Enter URL in the following text box:" 0 0 3
-touch text
+then { touch text
 WWWM=$(dialog --erase-on-exit --stdout --editbox text 7 0)
 w3m "$WWWM"
 }
