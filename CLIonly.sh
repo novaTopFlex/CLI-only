@@ -56,6 +56,7 @@ elif [[ $DIALOG == o ]]
 then { touch text
 CMD=$(dialog --erase-on-exit --stdout --editbox text 7 0)
 bash -c "$CMD"
+}
 else
 echo "Not Available."
 fi
