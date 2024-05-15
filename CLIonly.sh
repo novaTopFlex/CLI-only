@@ -12,7 +12,8 @@ DIALOG=$(dialog --erase-on-exit --stdout --menu "Select Application/Command..." 
 10 "cal" \
 11 "ncal" \
 12 "date" \
-13 "aptitude")
+13 "aptitude" \
+14 "w3m")
 if [[ $DIALOG == 1 ]]
 then ls
 elif [[ $DIALOG == 2 ]]
@@ -39,6 +40,11 @@ elif [[ $DIALOG == 12 ]]
 then date
 elif [[ $DIALOG == 13 ]]
 then aptitude
+elif [[ $DIALOG == 14 ]]
+then { touch text
+WWWM=$(dialog --editbox text 0 0)
+w3m "$WWW"
+}
 else
 echo "Not Available."
 fi
