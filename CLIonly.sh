@@ -12,6 +12,9 @@ DIALOG=$(dialog --erase-on-exit --stdout --menu "Select Application/Command..." 
 c "cal" \
 n "ncal" \
 d "date" \
+f "df -h" \
+F "free" \
+Fh "free -h" \
 a "aptitude" \
 0 "w3m" \
 s "ssh" \
@@ -40,6 +43,12 @@ elif [[ $DIALOG == n ]]
 then ncal $(date +%Y)
 elif [[ $DIALOG == d ]]
 then date
+elif [[ $DIALOG == f ]]
+then df -h
+elif [[ $DIALOG == F ]]
+then free
+elif [[ $DIALOG == Fh ]]
+then free -h
 elif [[ $DIALOG == a ]]
 then aptitude
 elif [[ $DIALOG == 0 ]]
