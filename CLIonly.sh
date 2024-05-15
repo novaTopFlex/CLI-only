@@ -13,7 +13,7 @@ c "cal" \
 n "ncal" \
 d "date" \
 a "aptitude" \
-w "w3m")
+0 "w3m")
 if [[ $DIALOG == 1 ]]
 then ls
 elif [[ $DIALOG == 2 ]]
@@ -40,9 +40,9 @@ elif [[ $DIALOG == d ]]
 then date
 elif [[ $DIALOG == a ]]
 then aptitude
-elif [[ $DIALOG == w ]]
+elif [[ $DIALOG == 0 ]]
 then { touch text
-WWWM=$(dialog --stdout --editbox text 0 0)
+WWWM=$(dialog --erase-on-exit --stdout --editbox text 0 0)
 w3m "$WWWM"
 }
 else
