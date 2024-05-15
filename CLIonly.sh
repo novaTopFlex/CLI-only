@@ -11,7 +11,8 @@ DIALOG=$(dialog --erase-on-exit --stdout --menu "Select Application/Command..." 
 9 "ps -ely" \
 10 "cal" \
 11 "ncal" \
-12 "date")
+12 "date" \
+13 "aptitude")
 if [[ $DIALOG == 1 ]]
 then ls
 elif [[ $DIALOG == 2 ]]
@@ -36,6 +37,8 @@ elif [[ $DIALOG == 11 ]]
 then ncal $(date +%Y)
 elif [[ $DIALOG == 12 ]]
 then date
+elif [[ $DIALOG == 13 ]]
+then aptitude
 else
 echo "Not Available."
 fi
