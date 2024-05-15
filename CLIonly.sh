@@ -18,6 +18,8 @@ Fh "free -h" \
 a "aptitude" \
 0 "w3m" \
 s "ssh" \
+t "toot" \
+i "irssi" \
 o "Other command...")
 if [[ $DIALOG == 1 ]]
 then ls
@@ -61,6 +63,10 @@ then { touch text
 SSH=$(dialog --erase-on-exit --stdout --editbox text 7 0)
 ssh "$SSH"
 }
+elif [[ $DIALOG == t ]]
+then toot tui
+elif [[ $DIALOG == i ]]
+then irssi
 elif [[ $DIALOG == o ]]
 then { touch text
 CMD=$(dialog --erase-on-exit --stdout --editbox text 7 0)
