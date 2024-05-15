@@ -14,7 +14,8 @@ n "ncal" \
 d "date" \
 a "aptitude" \
 0 "w3m" \
-s "ssh")
+s "ssh" \
+o "Other command...")
 if [[ $DIALOG == 1 ]]
 then ls
 elif [[ $DIALOG == 2 ]]
