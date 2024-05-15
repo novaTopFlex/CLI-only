@@ -13,7 +13,8 @@ c "cal" \
 n "ncal" \
 d "date" \
 a "aptitude" \
-0 "w3m")
+0 "w3m" \
+s "ssh")
 if [[ $DIALOG == 1 ]]
 then ls
 elif [[ $DIALOG == 2 ]]
@@ -42,9 +43,18 @@ elif [[ $DIALOG == a ]]
 then aptitude
 elif [[ $DIALOG == 0 ]]
 then { touch text
-WWWM=$(dialog --erase-on-exit --stdout --editbox text 0 0)
+WWWM=$(dialog --erase-on-exit --stdout --editbox text 7 0)
 w3m "$WWWM"
 }
+elif [[ $DIALOG == s ]]
+then { touch text
+SSH=$(dialog --erase-on-exit --stdout --editbox text 7 0)
+ssh "$SSH"
+}
+elif [[ $DIALOG == o ]]
+then { touch text
+CMD=$(dialog --erase-on-exit --stdout --editbox text 7 0)
+bash -c "$CMD"
 else
 echo "Not Available."
 fi
