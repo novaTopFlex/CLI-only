@@ -20,7 +20,7 @@ a "Package Manager" \
 s "Secure Shell (Remote into another system)" \
 t "Mastodon" \
 i "Internet Relay Chat (IRC)" \
-o "Other command...")
+o "Other command..." 3>&1 1>&2 2>&3)
 if [[ $DIALOG == 1 ]]
 then ls
 elif [[ $DIALOG == 2 ]]
