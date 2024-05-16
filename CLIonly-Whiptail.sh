@@ -1,14 +1,14 @@
 #!/bin/bash
 DIALOG=$(whiptail --menu "Select Command..." 0 0 0 \
-1 "List Contents" \
-2 "List Contents and Permissions" \
-3 "List Contents including Hidden" \
-4 "List Contents and Permissions including Hidden" \
-5 "Display IP address(es) (networking)" \
-6 "Display network statistics" \
-7 "Perform Wireshark Operations in the Terminal (Cybersecurity in the CLI)" \
-8 "List All Processes (BSD-style)" \
-9 "List All Processes (legacy Linux-style)" \
+L "List Contents" \
+L1 "List Contents and Permissions" \
+L2 "List Contents including Hidden" \
+L3 "List Contents and Permissions including Hidden" \
+D1 "Display IP address(es) (networking)" \
+D2 "Display network statistics" \
+P "Perform Wireshark Operations in the Terminal (Cybersecurity in the CLI)" \
+Q "List All Processes (BSD-style)" \
+Q1 "List All Processes (legacy Linux-style)" \
 c "Display Calendar for Current Year" \
 n "Display Calendar for Current Year with Vertical Weeks" \
 d "Display Current Date and Time" \
@@ -21,23 +21,23 @@ s "Secure Shell (Remote into another system)" \
 t "Mastodon" \
 i "Internet Relay Chat (IRC)" \
 o "Other command..." 3>&1 1>&2 2>&3)
-if [[ $DIALOG == 1 ]]
+if [[ $DIALOG == L ]]
 then ls
-elif [[ $DIALOG == 2 ]]
+elif [[ $DIALOG == L1 ]]
 then ls -l
-elif [[ $DIALOG == 3 ]]
+elif [[ $DIALOG == L2 ]]
 then ls -a
-elif [[ $DIALOG == 4 ]]
+elif [[ $DIALOG == L3 ]]
 then ls -al
-elif [[ $DIALOG == 5 ]]
+elif [[ $DIALOG == D1 ]]
 then ip a
-elif [[ $DIALOG == 6 ]]
+elif [[ $DIALOG == D2 ]]
 then ss
-elif [[ $DIALOG == 7 ]]
+elif [[ $DIALOG == P ]]
 then sudo tshark
-elif [[ $DIALOG == 8 ]]
+elif [[ $DIALOG == Q ]]
 then ps aux
-elif [[ $DIALOG == 9 ]]
+elif [[ $DIALOG == Q1 ]]
 then ps -ely
 elif [[ $DIALOG == c ]]
 then cal $(date +%Y)
