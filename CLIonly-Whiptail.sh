@@ -1,5 +1,5 @@
 #!/bin/bash
-DIALOG=$(whiptail --menu "Select Application/Command..." 0 0 0 \
+DIALOG=$(whiptail --menu "Select Command..." 0 0 0 \
 1 "List Contents" \
 2 "List Contents and Permissions" \
 3 "List Contents including Hidden" \
