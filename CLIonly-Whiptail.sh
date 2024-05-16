@@ -54,13 +54,11 @@ then free -h
 elif [[ $DIALOG == a ]]
 then aptitude
 elif [[ $DIALOG == 0 ]]
-then { touch text
-WWWM=$(whiptail --inputbox text 7 0 3>&1 1>&2 2>&3)
+then { WWWM=$(whiptail --inputbox "Enter URL in the text area below..." 7 0 3>&1 1>&2 2>&3)
 w3m "$WWWM"
 }
 elif [[ $DIALOG == s ]]
-then { touch text
-SSH=$(whiptail --inputbox text 7 0 3>&1 1>&2 2>&3)
+then { SSH=$(whiptail --inputbox "Enter host specification in the text area below..." 7 0 3>&1 1>&2 2>&3)
 ssh "$SSH"
 }
 elif [[ $DIALOG == t ]]
@@ -68,8 +66,7 @@ then toot tui
 elif [[ $DIALOG == i ]]
 then irssi
 elif [[ $DIALOG == o ]]
-then { touch text
-CMD=$(whiptail --inputbox text 7 0 3>&1 1>&2 2>&3)
+then { CMD=$(whiptail --inputbox "Enter command in the text area below..." 7 0 3>&1 1>&2 2>&3)
 bash -c "$CMD"
 }
 else
