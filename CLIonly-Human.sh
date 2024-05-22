@@ -24,11 +24,11 @@ o "Other command...")
 if [[ $DIALOG == 1 ]]
 then ls
 elif [[ $DIALOG == 2 ]]
-then ls -l
+then ls -l | less -F
 elif [[ $DIALOG == 3 ]]
 then ls -a
 elif [[ $DIALOG == 4 ]]
-then ls -al
+then ls -al | less -F
 elif [[ $DIALOG == 5 ]]
 then ip a
 elif [[ $DIALOG == 6 ]]
@@ -36,9 +36,9 @@ then ss
 elif [[ $DIALOG == 7 ]]
 then sudo tshark
 elif [[ $DIALOG == 8 ]]
-then ps aux
+then ps aux | less -F
 elif [[ $DIALOG == 9 ]]
-then ps -ely
+then ps -ely | less -F
 elif [[ $DIALOG == c ]]
 then cal $(date +%Y)
 elif [[ $DIALOG == n ]]
